@@ -1,15 +1,11 @@
 // ============================================
-//  OPORTUNIDADES – DAMAS
-//  Alimentado por planilha Google (mesmo esquema
-//  do script.js da página de Ligas: gviz/tq).
-//
 //  Edite apenas o CONFIG abaixo com o ID da sua
 //  planilha. O modelo de colunas está no arquivo
 //  "modelo-planilha-oportunidades.xlsx".
 // ============================================
 
 const CONFIG = {
-  SHEET_ID:   "COLE_AQUI_O_ID_DA_PLANILHA_DE_OPORTUNIDADES",
+  SHEET_ID:   "1TSOdfyqOQMhHXimB3Qm0nfOBRlwhVQOS5IV21T9Cmz0",
   SHEET_NAME: "Oportunidades",
 };
 
