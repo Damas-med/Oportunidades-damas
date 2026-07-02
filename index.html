@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oportunidades – DAMAS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- TOPO -->
+<header class="topbar">
+  <div class="topbar-marca">
+    <img src="brasao.png" alt="Brasão DAMAS" class="topbar-logo-img">
+    <div>
+      <div class="topbar-nome">DIRETÓRIO ACADÊMICO<br>DE MEDICINA</div>
+      <div class="topbar-sub">DR. ALEXANDRE SALES</div>
+    </div>
+  </div>
+  <nav class="topbar-nav">
+    <a href="#">Início</a>
+    <a href="#">Sobre</a>
+    <a href="#">Ligas</a>
+    <a href="#">Monitoria</a>
+    <a href="#">Extensão</a>
+    <a href="#">Pesquisa</a>
+    <a href="#">Eventos</a>
+    <a href="#" class="ativo">Oportunidades</a>
+    <a href="#">Contato</a>
+  </nav>
+  <button class="topbar-btn">🎓 Guia do calouro</button>
+</header>
+
+<!-- HERO -->
+<section class="opp-hero">
+  <div class="opp-hero-texto">
+    <h1>Oportunidades</h1>
+    <div class="opp-hero-linha"><span>◈</span></div>
+    <p>Descubra oportunidades que impulsionam sua formação acadêmica. Encontre programas, processos seletivos e iniciativas para aprender, pesquisar, ensinar e transformar.</p>
+  </div>
+  <div class="opp-hero-arte" aria-hidden="true">
+    <svg viewBox="0 0 420 320" class="opp-hero-svg">
+      <circle cx="80" cy="60" r="3" fill="#E8C96A" opacity=".7"/>
+      <circle cx="360" cy="40" r="2.5" fill="#E8C96A" opacity=".6"/>
+      <circle cx="380" cy="140" r="2" fill="#fff" opacity=".4"/>
+      <circle cx="40" cy="200" r="2" fill="#fff" opacity=".4"/>
+      <path d="M60 260 h60 v-40 h50 v40 h60 v20 h-170 z" fill="#2D6A4F" opacity=".5"/>
+      <g transform="translate(150,90)">
+        <circle cx="0" cy="0" r="46" fill="#2D6A4F" opacity=".55"/>
+        <path d="M-16 6c4 8 10 12 16 12s12-4 16-12" stroke="#F8F6F1" stroke-width="3" fill="none" stroke-linecap="round"/>
+      </g>
+      <g transform="translate(250,150)" stroke="#E8C96A" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M0 30 V6 M-14 6 h28 M-14 6 l-6 14 h40 l-6-14"/>
+        <circle cx="0" cy="-10" r="10"/>
+      </g>
+      <g transform="translate(320,220)" stroke="#F8F6F1" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity=".85">
+        <rect x="-18" y="-14" width="36" height="26" rx="2"/>
+        <path d="M-18 -6 h36 M0 -14 v26"/>
+      </g>
+    </svg>
+  </div>
+</section>
+
+<!-- ESTATÍSTICAS -->
+<div class="opp-stats">
+  <div class="opp-stat">
+    <div class="opp-stat-icon opp-stat-icon--verde">📨</div>
+    <div class="opp-stat-body">
+      <div class="opp-stat-label">Inscrições abertas</div>
+      <div class="opp-stat-valor" id="stat-abertas">–</div>
+      <a class="opp-stat-link" onclick="filtrarStatusChip('aberto')">Ver todas →</a>
+    </div>
+  </div>
+  <div class="opp-stat">
+    <div class="opp-stat-icon opp-stat-icon--dourado">🗓️</div>
+    <div class="opp-stat-body">
+      <div class="opp-stat-label">Encerram esta semana</div>
+      <div class="opp-stat-valor" id="stat-semana">–</div>
+      <a class="opp-stat-link" onclick="filtrarStatusChip('aberto')">Ver todas →</a>
+    </div>
+  </div>
+  <div class="opp-stat">
+    <div class="opp-stat-icon opp-stat-icon--verde">🎓</div>
+    <div class="opp-stat-body">
+      <div class="opp-stat-label">Programas disponíveis</div>
+      <div class="opp-stat-valor" id="stat-total">–</div>
+      <a class="opp-stat-link" onclick="limparFiltros()">Ver todas →</a>
+    </div>
+  </div>
+  <div class="opp-stat">
+    <div class="opp-stat-icon opp-stat-icon--dourado">▦</div>
+    <div class="opp-stat-body">
+      <div class="opp-stat-label">Categorias</div>
+      <div class="opp-stat-valor" id="stat-categorias">–</div>
+      <a class="opp-stat-link" href="#opp-categorias">Ver todas →</a>
+    </div>
+  </div>
+</div>
+
+<!-- SEÇÃO PRINCIPAL -->
+<section class="opp-section">
+
+  <!-- BUSCA -->
+  <div class="opp-busca-row">
+    <div class="busca-wrap opp-busca-wrap">
+      <span class="busca-icon">🔍</span>
+      <input class="busca-input" id="opp-busca-input" type="text" placeholder="Buscar oportunidade..." oninput="filtrarOportunidades()">
+    </div>
+    <div class="opp-ordenar-wrap">
+      <select id="opp-ordenar" class="opp-ordenar" onchange="filtrarOportunidades()">
+        <option value="recentes">Ordenar: Mais recentes</option>
+        <option value="prazo">Ordenar: Prazo mais próximo</option>
+        <option value="az">Ordenar: A–Z</option>
+      </select>
+    </div>
+    <button class="btn-filtros" id="opp-btn-filtros" onclick="alternarFiltrosAvancados()">
+      ⚖ Filtros
+    </button>
+  </div>
+
+  <!-- CHIPS DE CATEGORIA -->
+  <div class="opp-chips-row">
+    <div class="opp-chips" id="opp-chips"></div>
+    <div class="opp-legenda">
+      <span><i class="dot dot-aberto"></i>Abertas</span>
+      <span><i class="dot dot-breve"></i>Em breve</span>
+      <span><i class="dot dot-encerrado"></i>Encerradas</span>
+    </div>
+  </div>
+
+  <!-- LISTA -->
+  <div class="opp-lista" id="opp-lista">
+    <div class="loading-wrap">
+      <div class="spinner"></div>
+      <span>Carregando oportunidades...</span>
+    </div>
+  </div>
+
+  <!-- VER TODAS -->
+  <div class="ver-todas-wrap" id="opp-ver-todas-wrap" style="display:none">
+    <button class="btn-ver-todas" onclick="verTodasOportunidades()">Ver todas as oportunidades →</button>
+  </div>
+
+</section>
+
+<!-- EXPLORAR POR CATEGORIA -->
+<section class="acesso-section" id="opp-categorias">
+  <div class="opp-categorias-topo">
+    <div>
+      <div class="acesso-titulo">Explore por categoria</div>
+      <div class="acesso-linha"></div>
+    </div>
+    <a class="opp-categorias-link" href="#" onclick="limparFiltros();return false;">Ver todas as categorias →</a>
+  </div>
+  <div class="opp-categorias-grid" id="opp-categorias-grid"></div>
+</section>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="opp-modal-overlay" onclick="if(event.target===this)fecharModalOpp()">
+  <div class="modal">
+    <button class="modal-close" onclick="fecharModalOpp()">✕</button>
+    <div id="opp-modal-content"></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
