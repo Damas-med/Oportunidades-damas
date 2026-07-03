@@ -4,7 +4,7 @@
 // ============================================
 
 const CONFIG = {
-  SHEET_ID:   "COLE_AQUI_O_ID_DA_PLANILHA",
+  SHEET_ID:   "1W_gIG9YMEhSacYn6uq1Dv5qZuWrdOom-hwqwvhM60uw",
   SHEET_NAME: "Oportunidades",
 };
 
