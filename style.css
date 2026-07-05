@@ -8,7 +8,7 @@
 body { font-family: var(--font); background: var(--fundo); color: var(--texto); overflow-x: hidden; }
 a { text-decoration: none; color: inherit; }
 
-/* HEADER */
+/* HEADER */ 
 .header { background: var(--verde); display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 28px; padding: 20px 40px; }
 .header-esquerda { display: flex; align-items: center; gap: 14px; }
 .header-logo-img { height: 90px; width: auto; object-fit: contain; flex-shrink: 0; }
