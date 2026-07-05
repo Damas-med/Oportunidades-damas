@@ -1,5 +1,5 @@
 const CONFIG = {
-  SHEET_ID:   "COLE_AQUI_O_ID_DA_PLANILHA",
+  SHEET_ID:   "1wYROI4xMnUMzGGSCyHQKhvUAQr4sXlDshQWhscumJb8",
   SHEET_NAME: "Oportunidades",
 };
 
